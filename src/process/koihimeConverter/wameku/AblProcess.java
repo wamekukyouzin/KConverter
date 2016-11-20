@@ -11,6 +11,7 @@ public class AblProcess extends Process {
 	public Process action(CharaData chara, HashMap<String, String> data) {
 		LinkedHashMap<String, String> ablMap = chara.getAblMap();
 		ablMap.put("武闘", data.get("武闘"));
+		ablMap.put("防衛", data.get("防衛"));
 		ablMap.put("知略", data.get("知略"));
 		ablMap.put("政治", data.get("政治"));
 		ablMap.put("歌唱", data.get("歌唱"));

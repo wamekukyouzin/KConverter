@@ -32,6 +32,15 @@ public class ExpProcess extends Process {
 		if (!data.get("口淫経験").equals(""))
 			expMap.put("口淫経験", data.get("口淫経験"));
 
+		if (!data.get("膣内射精経験").equals(""))
+			expMap.put("膣内射精経験", data.get("膣内射精経験"));
+
+		if (!data.get("口内射精経験").equals(""))
+			expMap.put("口内射精経験", data.get("口内射精経験"));
+
+		if (!data.get("Ｖ性交経験").equals(""))
+			expMap.put("Ｖ性交経験", data.get("Ｖ性交経験"));
+
 		if (!data.get("異常経験").equals(""))
 			expMap.put("異常経験", data.get("異常経験"));
 
