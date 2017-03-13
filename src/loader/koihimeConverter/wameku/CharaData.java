@@ -115,7 +115,6 @@ public class CharaData {
 				sb.append(clause + "," + key + "," + value);
 			}
 		}
-		sb.append("素質,ＳＬＧ素質," + slgTalentValue);
 		return sb.toString();
 	}
 

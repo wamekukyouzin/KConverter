@@ -22,10 +22,10 @@ public class KoihimeCSVLoader {
 			System.exit(1);
 		}
 		KoihimeCSVLoader kcl = new KoihimeCSVLoader();
-		kcl.doIt(args[0]);
+		kcl.doCSV(args[0]);
 	}
 
-	public void doIt(String arg) {
+	public void doCSV(String arg) {
 		Scanner scanner;
 		try {
 			Path path = Paths.get(arg);

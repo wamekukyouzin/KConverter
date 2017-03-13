@@ -105,7 +105,7 @@ public class TalentProcess extends Process{
 					break;
 			}
 		}
-		return new SLGTalentProcess();
+		return new ExpProcess();
 
 	}
 
