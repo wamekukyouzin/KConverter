@@ -76,6 +76,12 @@ public class AblProcess extends Process {
 		if (!data.get("能力 [触手]").equals(""))
 			ablMap.put("触手", data.get("能力 [触手]"));
 
+		if (!data.get("能力 [サド]").equals(""))
+			ablMap.put("サド", data.get("能力 [サド]"));
+		
+		if (!data.get("能力 [マゾ]").equals(""))
+			ablMap.put("マゾ", data.get("能力 [マゾ]"));
+
 		if (!data.get("能力 [肝臓]").equals(""))
 			ablMap.put("肝臓", data.get("能力 [肝臓]"));
 		return new TalentProcess();
