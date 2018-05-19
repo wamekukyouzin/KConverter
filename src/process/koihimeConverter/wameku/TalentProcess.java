@@ -76,7 +76,6 @@ public class TalentProcess extends Process{
 		String[] talents = data.get("素質").split(",");
 
 		talentMap.put("成長型", growTypeMap.get(data.get("成長型")));
-		talentMap.put("性格", charaMap.get((data.get("性格"))));
 		talentMap.put("陰毛現在値", inmouMap.get(data.get("陰毛")));
 		talentMap.put("陰毛目標値", inmouMap.get(data.get("陰毛")));
 		talentMap.put("性的嗜好", preferenceMap.get(data.get("性的嗜好")));
@@ -99,6 +98,18 @@ public class TalentProcess extends Process{
 					break;
 				case "特殊キャラ":
 					talentMap.put("キャラ区分", "2");
+					break;
+				case "絶壁":
+					talentMap.put("バストサイズ", "-2");
+					break;
+				case "貧乳":
+					talentMap.put("バストサイズ", "-1");
+					break;
+				case "巨乳":
+					talentMap.put("バストサイズ", "1");
+					break;
+				case "爆乳":
+					talentMap.put("バストサイズ", "2");
 					break;
 				default:
 					talentMap.put(talent, "1");

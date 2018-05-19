@@ -1,9 +1,8 @@
 package process.koihimeConverter.wameku;
 
-import loader.koihimeConverter.wameku.CharaData;
-
 import java.util.HashMap;
-import java.util.LinkedHashMap;
+
+import loader.koihimeConverter.wameku.CharaData;
 
 /**
  * Created by WamekuKyouzin on 2016/05/03.
