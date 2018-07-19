@@ -12,6 +12,13 @@ public class TalentProcess extends Process{
 	private HashMap<String, String> inmouMap = new HashMap<>();
 	private HashMap<String, String> preferenceMap = new HashMap<>();
 	private HashMap<String, String> tightnessMap = new HashMap<>();
+	private HashMap<String, String> armpitMap = new HashMap<>();
+	private HashMap<String, String> bodySizeMap = new HashMap<>();
+	private HashMap<String, String> bodyTypeMap = new HashMap<>();
+	private HashMap<String, String> bustSizeMap = new HashMap<>();
+	private HashMap<String, String> hipSizeMap = new HashMap<>();
+	private HashMap<String, String> hairMap = new HashMap<>();
+
 	//入力された生データを対応する数値に変換するための対応表
 	TalentProcess() {
 		charaMap.put("", "0");
@@ -42,6 +49,18 @@ public class TalentProcess extends Process{
 		inmouMap.put("剛毛", "8");
 		inmouMap.put("尻まで届く", "9");
 		inmouMap.put("ハート型", "10");
+		armpitMap.put("脱毛済み", "-1");
+		armpitMap.put("つるつる", "0");
+		armpitMap.put("手入れ済み", "1");
+		armpitMap.put("うっすら", "2");
+		armpitMap.put("ふんわり", "3");
+		armpitMap.put("普通", "4");
+		armpitMap.put("多め", "5");
+		armpitMap.put("ふさふさ", "6");
+		armpitMap.put("もっさり", "7");
+		armpitMap.put("剛毛", "8");
+		armpitMap.put("密林", "9");
+
 		preferenceMap.put("愛撫（する）", "1");
 		preferenceMap.put("奉仕（する）", "2");
 		preferenceMap.put("性交（する）", "3");
@@ -67,6 +86,40 @@ public class TalentProcess extends Process{
 		tightnessMap.put("がばがば", "150");
 		tightnessMap.put("崩壊", "50");
 
+		bodySizeMap.put("子供", "-2");
+		bodySizeMap.put("小柄", "-1");
+		bodySizeMap.put("普通", "0");
+		bodySizeMap.put("長身", "1");
+		bodySizeMap.put("大柄", "2");
+		bodySizeMap.put("巨大", "3");
+
+		bodyTypeMap.put("痩せすぎ", "-3");
+		bodyTypeMap.put("細身", "-2");
+		bodyTypeMap.put("スレンダー", "-1");
+		bodyTypeMap.put("普通", "0");
+		bodyTypeMap.put("グラマー", "1");
+		bodyTypeMap.put("豊満", "2");
+		bodyTypeMap.put("肥満", "3");
+
+		bustSizeMap.put("絶壁", "-2");
+		bustSizeMap.put("貧乳", "-1");
+		bustSizeMap.put("普乳", "0");
+		bustSizeMap.put("巨乳", "1");
+		bustSizeMap.put("爆乳", "2");
+
+		hipSizeMap.put("壁尻", "-2");
+		hipSizeMap.put("薄尻", "-1");
+		hipSizeMap.put("普尻", "0");
+		hipSizeMap.put("巨尻", "1");
+		hipSizeMap.put("爆尻", "2");
+
+		hairMap.put("不明", "0");
+		hairMap.put("スキンヘッド", "1");
+		hairMap.put("超ショート", "2");
+		hairMap.put("ショート", "3");
+		hairMap.put("ミドル", "4");
+		hairMap.put("ロング", "5");
+		hairMap.put("超ロング", "6");
 	}
 
 	@Override
@@ -78,13 +131,21 @@ public class TalentProcess extends Process{
 		talentMap.put("成長型", growTypeMap.get(data.get("成長型")));
 		talentMap.put("陰毛現在値", inmouMap.get(data.get("陰毛")));
 		talentMap.put("陰毛目標値", inmouMap.get(data.get("陰毛")));
+		talentMap.put("腋毛現在値", armpitMap.get(data.get("腋毛")));
+		talentMap.put("腋毛目標値", armpitMap.get(data.get("腋毛")));
+
 		talentMap.put("性的嗜好", preferenceMap.get(data.get("性的嗜好")));
 		talentMap.put("Ｖ締まり", tightnessMap.get(data.get("Ｖ締まり")));
 		talentMap.put("Ａ締まり", tightnessMap.get(data.get("Ａ締まり")));
 
 		//髪色は0x表記で16進数を利用しているので、こちらであらかじめつけておく
 		talentMap.put("髪色", "0x" + data.get("髪色"));
-		talentMap.put("髪の長さ", data.get("髪の長さ"));
+		talentMap.put("髪の長さ", hairMap.get(data.get("髪の長さ")));
+
+		talentMap.put("体格", bodySizeMap.get(data.get("体格")));
+		talentMap.put("体型", bodyTypeMap.get(data.get("体型")));
+		talentMap.put("バストサイズ", bustSizeMap.get(data.get("バストサイズ")));
+		talentMap.put("ヒップサイズ", hipSizeMap.get(data.get("ヒップサイズ")));
 
 		//この時点でtalentsの各要素には不要な半角スペースがあるので、一応取っておく（問題ないとは思うが……）
 		//あと全角も取っておく（これは明確に問題になる　なった）
